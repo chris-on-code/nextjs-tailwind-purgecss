@@ -18,7 +18,6 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    purgecss
-    // ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])
   ]
 };

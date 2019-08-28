@@ -14,14 +14,9 @@ const Home = () => (
 
     <div className="h-screen flex items-center text-center justify-center bg-blue-200">
       <div>
-        <h1 className="text-5xl text-blue-800">Next + Tailwind + PurgeCSS</h1>
-
-        <p>Steps to add Tailwind and PurgeCSS to Next:</p>
-        <ol>
-          <li>
-            Install PostCSS: <code>yarn add </code>
-          </li>
-        </ol>
+        <h1 className="text-5xl text-blue-800">
+          🤣 Next + Tailwind + PurgeCSS 👏
+        </h1>
       </div>
     </div>
   </>
