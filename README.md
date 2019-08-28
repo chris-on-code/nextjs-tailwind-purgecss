@@ -14,11 +14,11 @@ PurgeCSS allows us to remove any unused Tailwind classes to keep our bundles _ti
 
 ## TLDR: How to Add Tailwind and PurgeCSS to Next.js
 
-1. Install Tailwind: `yarn add tailwindcss autoprefixer --dev`
-2. Install PurgeCSS: `yarn add @zeit/next-css --dev`
-3. Configure Next.js on how to use CSS files + PurgeCSS: `next.config.js`
+1. Install PurgeCSS: `yarn add @zeit/next-css --dev`
+2. Configure Next.js on how to use CSS files + PurgeCSS: `next.config.js`
+3. Install Tailwind: `yarn add tailwindcss autoprefixer --dev`
 4. Install Tailwind PurgeCSS package: `yarn add @fullhuman/postcss-purgecss --dev`
-5. Configure PurgeCSS: `postcss.config.js`
+5. Configure PurgeCSS through PostCSS: `postcss.config.js`
 6. Create and import `main.css` file
 7. `yarn dev`!!!
 
