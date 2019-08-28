@@ -5,6 +5,8 @@
 
 PurgeCSS allows us to remove any unused Tailwind classes to keep our bundles _tiny_.
 
+> Change your CSS from 90kb to 3kb!
+
 ## The Overall Strategy
 
 1. Tell Next.js to use PostCSS
