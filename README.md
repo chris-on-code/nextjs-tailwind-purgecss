@@ -7,6 +7,14 @@ PurgeCSS allows us to remove any unused Tailwind classes to keep our bundles _ti
 
 > Change your CSS from 90kb to 3kb!
 
+- [See this in action on CodeSandbox](https://codesandbox.io/s/github/sevilayha/nextjs-tailwind-purgecss)
+
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/sevilayha/nextjs-tailwind-purgecss)
+
+## Why Make This?
+
+Created this example because all the other examples I found were outdated or not the simplest solutions. This is as simple as we can get it for now. Tailwind may be updated in the future to integrate PurgeCSS. We should update this if that ever happens.
+
 ## The Overall Strategy
 
 1. Tell Next.js to use PostCSS
