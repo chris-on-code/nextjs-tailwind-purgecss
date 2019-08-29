@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
-import Nav from '../components/Nav';
+import Nav from '../components/nav';
 import '../assets/styles/main.css';
 
 const Home = () => (
