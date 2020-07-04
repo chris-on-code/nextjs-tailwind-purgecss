@@ -22,29 +22,14 @@ Created this example because all the other examples I found were outdated or not
 
 ## TLDR: How to Add Tailwind and PurgeCSS to Next.js
 
-1. Install PurgeCSS: `yarn add @zeit/next-css --dev`
-2. Configure Next.js on how to use CSS files + PurgeCSS: `next.config.js`
-3. Install Tailwind: `yarn add tailwindcss autoprefixer --dev`
-4. Install Tailwind PurgeCSS package: `yarn add @fullhuman/postcss-purgecss --dev`
-5. Configure PurgeCSS through PostCSS: `postcss.config.js`
-6. Create and import `main.css` file
-7. `yarn dev`!!!
+1. Configure Next.js on how to use CSS files + PurgeCSS: `next.config.js`
+2. Install Tailwind: `yarn add tailwindcss autoprefixer --dev`
+3. Install Tailwind PurgeCSS package: `yarn add @fullhuman/postcss-purgecss --dev`
+4. Configure PurgeCSS through PostCSS: `postcss.config.js`
+5. Create and import `main.css` file
+6. `yarn dev`!!!
 
 This will only use PurgeCSS in production.
-
-## Configure Next.js (next.config.js)
-
-We are going to tell Next.js to process CSS files using [next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css).
-
-By using this package, Next.js will be using PostCSS to handle processing CSS files. The next step will be to configure PostCSS.
-
-```javascript
-// next.config.js
-
-const withCss = require('@zeit/next-css');
-
-module.exports = withCss();
-```
 
 ## Configure PostCSS (postcss.config.js)
 
@@ -53,7 +38,7 @@ PostCSS is where we will process Tailwind, Autoprefixer, and PurgeCSS. This is p
 ```javascript
 // postcss.config.js
 
-const purgecss = require('@fullhuman/postcss-purgecss')({
+const purgecss = ['@fullhuman/postcss-purgecss', {
   // Specify the paths to all of the template files in your project
   content: ['./pages/**/*.js', './components/**/*.js'],
 
@@ -62,12 +47,12 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 
   // Include any special characters you're using in this regular expression
   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-});
+}];
 
 module.exports = {
   plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
+    'tailwindcss',
+    'autoprefixer',
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])
   ]
 };
@@ -104,8 +89,8 @@ To try this out, go into `postcss.config.js` and add `purgecss` directly to the 
 
 module.exports = {
   plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
+    'tailwindcss',
+    'autoprefixer',
     purgecss
     // ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])
   ]
